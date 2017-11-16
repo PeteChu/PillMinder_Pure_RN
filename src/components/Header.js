@@ -1,16 +1,14 @@
 import React from 'react';
-import { Container, Header, Left ,Body, Title, Icon } from 'native-base';
+import { Container, Header, Left, Body, Title, Icon } from 'native-base';
 
 const AppHeader = (props) => {
   return (
-    <Container>
-      <Header>
-        <Body>
-          <Title>{props.headerText}</Title>
-        </Body>
-      </Header>
-    </Container>
+    <Header>
+      <Body>
+        <Title>{props.headerText}</Title>
+      </Body>
+    </Header>
   );
 };
 
-export default Header;
+export default AppHeader;

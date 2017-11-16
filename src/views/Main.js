@@ -1,25 +1,24 @@
-import React, { Component } from 'react';
-import { StatusBar, Text } from 'react-native';
-import { Container } from 'native-base';
-import Header from './../components/Header';
+import React from 'react';
+import {
+  Container,
+  Content,
+  Footer,
+} from 'native-base';
+import AppHeader from './../components/Header';
+import TabNavigator from './../components/TabNavigator'
 
-class Main extends Component {
-  render() {
 
-    const { header } = styles
-
-    return (
-      <Container>
-        <Header style={header} headerText={'Home'}/>
-      </Container>
-    )
-  };
-}
-
-const styles = {
-  header: {
-    paddingTop: StatusBar.currentHeight,
-  }
+const Main = () => {
+  return (
+    <Container>
+      <AppHeader headerText={'Home'} />
+      <Content>
+      </Content>
+      <Footer>
+        <TabNavigator />
+      </Footer>
+    </Container>
+  )
 }
 
 export default Main;
