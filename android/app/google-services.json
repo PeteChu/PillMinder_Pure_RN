@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "926938272954",
+    "firebase_url": "https://pillminder-b8acf.firebaseio.com",
+    "project_id": "pillminder-b8acf",
+    "storage_bucket": "pillminder-b8acf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:926938272954:android:f6402d474acec713",
+        "android_client_info": {
+          "package_name": "com.pillminder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "926938272954-vufe0aa7hjimagn3v3sv71vptq8ukhvj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pillminder",
+            "certificate_hash": "7cf72a4b5e1e73675d58bffd6e2d781dd6d0001f"
+          }
+        },
+        {
+          "client_id": "926938272954-r593c4idkol429v2brqprcd9m2pk2sll.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAh3qzv2C9tIcyNTilfpLt81VnFKJ94Hv8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "926938272954-r593c4idkol429v2brqprcd9m2pk2sll.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
