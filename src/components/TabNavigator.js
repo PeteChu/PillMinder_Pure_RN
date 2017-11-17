@@ -6,12 +6,9 @@ import {
   Button,
   Icon,
 } from 'native-base';
-import { Actions } from 'react-native-router-flux';
 
 
 class TabNavigator extends Component {
-
-
   render() {
     return (
       <FooterTab>
@@ -29,7 +26,7 @@ class TabNavigator extends Component {
   };
 
   onCameraPress() {
-    Actions.camera();
+  
   }
 
 }

@@ -1,14 +1,24 @@
-import React from 'react';
-import { Container, Header, Left, Body, Title, Icon } from 'native-base';
+import React, { Component } from 'react';
+import {
+  Container,
+  Header,
+  Left,
+  Body,
+  Title,
+  Icon
+} from 'native-base';
 
-const AppHeader = (props) => {
-  return (
-    <Header>
-      <Body>
-        <Title>{props.headerText}</Title>
-      </Body>
-    </Header>
-  );
-};
+class AppHeader extends Component {
+  render() {
+    return (
+      <Header>
+        <Body>
+          <Title>{this.props.headerText}</Title>
+        </Body>
+      </Header>
+    )
+  };
+
+}
 
 export default AppHeader;

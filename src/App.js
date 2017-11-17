@@ -1,27 +1,23 @@
 import React, { Component } from 'react';
-import { Router, Scene } from 'react-native-router-flux';
+import { Router, Scene, Stack } from 'react-native-router-flux';
 
-import Main from './views/Main'
-import Camera from './views/Camera'
+import Main from './screens/Main';
+import Camera from './screens/Camera';
+import Menu from './screens/Menu';
+import LoginScreen from './screens/LoginScreen';
 
-const App = () => {
-  return(
-    <Router>
-      <Scene key='root'>
-        <Scene 
-          key='main'
-          component={Main}
-          hideNavBar
-          initial
-        />
-        <Scene 
-          key="camera"
-          component={Camera}
-          hideNavBar
-        />
-      </Scene>
-    </Router>
-  )
+class App extends Component {
+  render() {
+    return (
+      <Router>
+        <Stack key='root' hideNavBar={true}>
+          <Scene key='login' component={LoginScreen} initial />
+          <Scene key='main' component={Main} />
+          <Scene key='Camera' component={Camera} />
+        </Stack>
+      </Router>
+    )
+  };
 }
 
 export default App;
