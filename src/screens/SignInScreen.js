@@ -7,16 +7,13 @@ import {
   Text
 } from 'native-base';
 
-class LoginScreen extends Component {
+class SignInScreen extends Component {
   render() {
-
     const { rootContainer, appLogo, loginButton } = styles;
-
-
     return (
       <Container style={rootContainer}>
         <Content>
-          <Image source={require('./../images/logo.png')} style={appLogo} resizeMode="contain" />
+          <Image source={require('./../../public/images/logo.png')} style={appLogo} resizeMode="contain" />
           <Button rounded style={loginButton}>
             <Text>Facebook Login</Text>
           </Button>
@@ -52,4 +49,4 @@ const styles = {
   }
 }
 
-export default LoginScreen;
+export default SignInScreen;

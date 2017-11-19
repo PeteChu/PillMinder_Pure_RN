@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { Router, Scene, Stack } from 'react-native-router-flux';
+import { Container } from 'native-base'
 import firebase from 'react-native-firebase';
 
-import Main from './screens/Main';
-import Camera from './screens/Camera';
-import Menu from './screens/Menu';
-import LoginScreen from './screens/LoginScreen';
+import RootNavigator from './navigator/RootNavigator';
+
+import SignScreen from './screens/SignInScreen';
 
 class App extends Component {
 
@@ -18,7 +17,7 @@ class App extends Component {
 
   componentDidMount() {
     firebase.auth().signInAnonymously()
-      .then( () => {
+      .then(() => {
         this.setState({
           isAuthenticated: true,
         });
@@ -27,18 +26,14 @@ class App extends Component {
 
   render() {
 
-    if(!this.state.isAuthenticated) {
+    if (!this.state.isAuthenticated) {
       return null;
     }
 
     return (
-      <Router>
-        <Stack key='root' hideNavBar={true}>
-          <Scene key='login' component={LoginScreen} initial />
-          <Scene key='main' component={Main} />
-          <Scene key='Camera' component={Camera} />
-        </Stack>
-      </Router>
+      <Container>
+        <RootNavigator />
+      </Container>
     )
   };
 }
