@@ -8,22 +8,10 @@ import {
 } from 'native-base';
 import { GoogleSignin, GoogleSigninButton } from 'react-native-google-signin';
 import { NavigationActions } from 'react-navigation';
-import { firebase } from 'react-native-firebase';
+import firebase from 'react-native-firebase'
 
 class SignInScreen extends Component {
 
-  constructor() {
-    super();
-    this.state = {
-      isAuthenticated: false,
-    }
-  }
-
-  componentWillMount() {
-    if (this.state.isAuthenticated) {
-      this.goToHomeScreen()
-    }
-  }
 
   componentDidMount() {
     GoogleSignin.hasPlayServices({ autoResolve: true })
@@ -33,10 +21,6 @@ class SignInScreen extends Component {
       .catch((err) => {
         console.log("Play service error", err.code, err.message);
       })
-  }
-
-  componentDidUpdate() {
-
   }
 
   render() {
@@ -80,18 +64,16 @@ class SignInScreen extends Component {
             return firebase.auth().signInWithCredential(credential)
           })
           .then((currentUser) => {
-            this.setState = { isAuthenticated: true }
-            goToHomeScreen()
-            console.info(JSON.stringify(currentUser.toJSON()))
+            if (currentUser != null) {
+              this.goToHomeScreen()
+            }
+            // console.info(JSON.stringify(currentUser.toJSON()))
           })
           .catch((error) => {
             console.error(`Login fail with error: ${error}`)
           })
       })
   }
-
-
-
 
 }
 
