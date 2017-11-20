@@ -3520,6 +3520,10 @@ react-native-firebase@^3.1.0:
     opencollective "^1.0.3"
     prop-types "^15.6.0"
 
+react-native-google-signin@^0.12.0:
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/react-native-google-signin/-/react-native-google-signin-0.12.0.tgz#fc549593adbc92ed2a5a683a957f157650ece961"
+
 "react-native-keyboard-aware-scroll-view@https://github.com/GeekyAnts/react-native-keyboard-aware-scroll-view":
   version "0.2.9"
   resolved "https://github.com/GeekyAnts/react-native-keyboard-aware-scroll-view#f4805f254d6cc8e3329f5fb224944401f66655db"
@@ -3533,10 +3537,6 @@ react-native-tab-view@^0.0.70:
   resolved "https://registry.yarnpkg.com/react-native-tab-view/-/react-native-tab-view-0.0.70.tgz#1dd2ded32acd0cb6bfef38d26e53675db733b37b"
   dependencies:
     prop-types "^15.5.10"
-
-react-native-uploader@^0.0.10:
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/react-native-uploader/-/react-native-uploader-0.0.10.tgz#ea46d23c5a8e83392aabc12443184c342245f607"
 
 react-native-vector-icons@^4.4.2, react-native-vector-icons@~4.4.2:
   version "4.4.2"
