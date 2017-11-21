@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image } from 'react-native';
+import { Image, ToastAndroid } from 'react-native';
 import {
   Container,
   Content,
@@ -65,6 +65,7 @@ class SignInScreen extends Component {
           })
           .then((currentUser) => {
             if (currentUser != null) {
+              ToastAndroid.show(JSON.stringify(currentUser), ToastAndroid.SHORT);
               this.goToHomeScreen()
             }
             // console.info(JSON.stringify(currentUser.toJSON()))

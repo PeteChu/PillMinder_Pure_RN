@@ -3,6 +3,7 @@ import { DrawerNavigator, StackNavigator } from 'react-navigation';
 
 import HomeScreen from './../screens/HomeScreen';
 import CameraScreen from './../screens/CameraScreen';
+import PreviewPhotoScreen from './../screens/PreviewPhotoScreen';
 import SettingsScreen from './../screens/SettingsScreen';
 import MedicationsScreen from './../screens/MedicationsScreen';
 import SignInScreen from './../screens/SignInScreen';
@@ -18,7 +19,16 @@ const RootNavigator = StackNavigator(
           screen: HomeScreen,
         },
         Camera: {
-          screen: CameraScreen,
+          screen: StackNavigator({
+            Camera: {
+              screen: CameraScreen,
+            },
+            PreviewPhoto: {
+              screen: PreviewPhotoScreen,
+            }
+          }, {
+              headerMode: 'none'
+            }),
         },
         Medications: {
           screen: MedicationsScreen

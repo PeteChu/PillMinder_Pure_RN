@@ -22,6 +22,7 @@ class AppCamera extends Component {
           style={styles.preview}
           aspect={Camera.constants.Aspect.fill}
           captureTarget={Camera.constants.CaptureTarget.temp}
+          playSoundOnCapture={false}
           defaultTouchToFocus>
 
           <Button onPress={this.takePicture.bind(this)} style={styles.capture}>
@@ -37,7 +38,8 @@ class AppCamera extends Component {
     //options.location = ...
     this.camera.capture({ metadata: options })
       .then((data) => {
-        
+        // ToastAndroid.show(data.path, ToastAndroid.SHORT);
+        this.props.navigation.navigate("PreviewPhoto", { photo: data })
       })
       .catch(err => console.error(err));
   }
