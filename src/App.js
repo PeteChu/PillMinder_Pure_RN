@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
 import { Container } from 'native-base';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import firebase from 'react-native-firebase';
+import configureStore from './configureStore'
+import reducers from './reducers'
 
-import RootNavigator from './navigator/RootNavigator';
+import RootNavigator from './navigators/RootNavigator';
 
 class App extends Component {
 
   render() {
 
+    var store = configureStore()
+
     return (
-      <Provider store={createStore}>
+      <Provider store={store}>
         <RootNavigator />
       </Provider>
     )
