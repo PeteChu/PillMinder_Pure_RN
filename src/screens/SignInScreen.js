@@ -8,10 +8,10 @@ import {
 } from 'native-base';
 import { GoogleSignin, GoogleSigninButton } from 'react-native-google-signin';
 import { NavigationActions } from 'react-navigation';
-import firebase from 'react-native-firebase'
+import Spinner from 'react-native-loading-spinner-overlay';
+import firebase from 'react-native-firebase';
 
 class SignInScreen extends Component {
-
 
   componentDidMount() {
     GoogleSignin.hasPlayServices({ autoResolve: true })
