@@ -7,6 +7,7 @@ import PreviewPhotoScreen from './../screens/PreviewPhotoScreen';
 import SettingsScreen from './../screens/SettingsScreen';
 import MedicationsScreen from './../screens/MedicationsScreen';
 import SignInScreen from './../screens/SignInScreen';
+import MainScreen from './../screens/MainScreen';
 
 const RootNavigator = StackNavigator(
   {

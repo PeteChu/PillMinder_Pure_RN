@@ -12,6 +12,13 @@ import firebase from 'react-native-firebase'
 
 class SignInScreen extends Component {
 
+  componentWillMount() {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.goToHomeScreen()
+      }
+    })
+  }
 
   componentDidMount() {
     GoogleSignin.hasPlayServices({ autoResolve: true })
@@ -24,8 +31,8 @@ class SignInScreen extends Component {
   }
 
   render() {
-
     const { rootContainer, appLogo, loginButton } = styles;
+
     return (
       <Container style={rootContainer}>
         <Content>
