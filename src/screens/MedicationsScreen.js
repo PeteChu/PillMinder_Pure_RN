@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import PushNotification from 'react-native-push-notification'
+import { DeviceEventEmitter, ToastAndroid } from 'react-native';
+import PushNotification from 'react-native-push-notification';
 import {
   Container,
   Content,
@@ -13,7 +14,6 @@ import {
   Input
 } from 'native-base';
 import DateTimePicker from 'react-native-modal-datetime-picker';
-
 import AppHeader from './../components/Header';
 import MedForm from '../components/MedForm';
 
@@ -28,6 +28,21 @@ class MedicationsScreen extends Component {
       isDatePickerVisible: false,
       isTimePickerVisible: false
     };
+  }
+
+  componentWillMount() {
+    PushNotification.registerNotificationActions(['Yes', 'No']);
+    DeviceEventEmitter.addListener('notificationActionReceived', function (action) {
+      console.log('Notification action received: ' + action);
+      const info = JSON.parse(action.dataJSON);
+      if (info.action == 'Yes') {
+        console.log("Yes");
+
+      } else if (info.action == 'No') {
+        console.log("No");
+      }
+
+    });
   }
 
   render() {
@@ -115,8 +130,11 @@ class MedicationsScreen extends Component {
     var myNoti = PushNotification.localNotification({
       title: "ถึงเวลารับประทานยา" + this.state.text,
       message: "My Notification Message",
-      actions: '["Yes", "No"]'
+      date: new Date(Date.now() + (60 * 1000)),
+      actions: '["Yes", "No"]',
     })
+
+    ToastAndroid.show(myNoti, ToastAndroid.SHORT)
 
   }
 
