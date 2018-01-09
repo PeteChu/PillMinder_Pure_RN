@@ -8,7 +8,7 @@ import {
 } from 'native-base';
 import { GoogleSignin, GoogleSigninButton } from 'react-native-google-signin';
 import { NavigationActions } from 'react-navigation';
-import firebase from 'react-native-firebase'
+import firebase from 'react-native-firebase';
 
 class SignInScreen extends Component {
 

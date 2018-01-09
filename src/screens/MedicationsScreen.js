@@ -22,6 +22,7 @@ class MedicationsScreen extends Component {
   constructor() {
     super();
     this.state = {
+      text: "",
       date: Date.now(),
       time: "08.00",
       isDatePickerVisible: false,
@@ -31,7 +32,7 @@ class MedicationsScreen extends Component {
 
   render() {
 
-    var { timeStyle } = styles;
+    var { timeStyle, btnAddNoti } = styles;
 
     return (
       <Container>
@@ -49,7 +50,9 @@ class MedicationsScreen extends Component {
             <Form>
               <Item floatingLabel>
                 <Label>medicine or brand name</Label>
-                <Input />
+                <Input
+                  onChangeText={(text) => this.setState({ text })}
+                />
               </Item>
             </Form>
           </MedForm>
@@ -77,6 +80,10 @@ class MedicationsScreen extends Component {
               onCancel={this._hideDatePicker}
             />
           </MedForm>
+
+          <Button style={btnAddNoti} onPress={() => this._setNotification()}>
+            <Text style={{ color: "#1686C4" }}>Add nonotification</Text>
+          </Button>
 
         </Content>
 
@@ -106,7 +113,7 @@ class MedicationsScreen extends Component {
 
   _setNotification() {
     var myNoti = PushNotification.localNotification({
-      title: "My Notification Title",
+      title: "ถึงเวลารับประทานยา" + this.state.text,
       message: "My Notification Message",
       actions: '["Yes", "No"]'
     })
@@ -123,6 +130,10 @@ const styles = {
     fontSize: 18,
     color: "#1686C4",
     padding: 15,
+  },
+  btnAddNoti: {
+    justifyContent: 'center',
+    backgroundColor: '#FFFFFF'
   }
 }
 
