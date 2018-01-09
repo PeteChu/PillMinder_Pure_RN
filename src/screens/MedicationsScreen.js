@@ -127,14 +127,16 @@ class MedicationsScreen extends Component {
   }
 
   _setNotification() {
-    var myNoti = PushNotification.localNotification({
-      title: "ถึงเวลารับประทานยา" + this.state.text,
-      message: "My Notification Message",
-      date: new Date(Date.now() + (60 * 1000)),
-      actions: '["Yes", "No"]',
-    })
 
-    ToastAndroid.show(myNoti, ToastAndroid.SHORT)
+    if (this.state.text) {
+      PushNotification.localNotificationSchedule({
+        id: '1234',
+        title: "ถึงเวลารับประทานยา " + this.state.text,
+        message: "My Notification Message",
+        date: new Date(Date.now() + (5 * 1000)),
+        actions: '["Yes", "No"]',
+      })
+    }
 
   }
 
